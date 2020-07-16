@@ -1,6 +1,7 @@
 package com.example.android.miwok;
 
 import android.content.Context;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -44,6 +45,9 @@ public class WordAdapter extends ArrayAdapter<WordObject> {
         // Get the version number from the current AndroidFlavor object and
         // set this text on the number TextView
         defaultTextView.setText(wordObject.getDefaultTranslation());
+
+        ImageView imageView = (ImageView) listItemView.findViewById(R.id.ic_image);
+        imageView.setImageResource(wordObject.getImageResource());
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
